@@ -6,5 +6,4 @@ RUN npm install
 COPY ./ /app/
 RUN npm run build
 FROM nginx:alpine
-COPY nginx/nginx.conf /etc/nginx/nginx.conf
-COPY . /usr/share/nginx/html
+COPY ./build /usr/share/nginx/html
