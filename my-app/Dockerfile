@@ -1,8 +1,9 @@
 # base image
 FROM node:12.2.0-alpine
 WORKDIR /app
-COPY . /app
+COPY package*.json /app/
 RUN npm install
+COPY ./ /app/
 RUN npm run build
 FROM nginx:alpine
-COPY app/build/ app/usr/share/nginx/html
+COPY /app/build/ /usr/share/nginx/html
