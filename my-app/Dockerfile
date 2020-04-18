@@ -5,4 +5,4 @@ COPY . /app
 RUN npm install
 RUN npm run build
 FROM nginx:alpine
-COPY /build /usr/share/nginx/html
+COPY /app/build /usr/share/nginx/html
